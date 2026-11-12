@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Young Vets Links</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&display=swap">
+<style>
+/* Layout: one screen, no scroll. A cream card over the blurred running-retriever photo, crest on top, double-ruled buttons below.
+   Colours are the exact logo colours. Single look on purpose (no dark-mode variant). */
+:root {
+  --green: #1e5e3b;
+  --cream: #fff9ec;
+  --backdrop: #23331f;
+  --rule: rgba(30, 94, 59, .38);
+  --hover: rgba(30, 94, 59, .07);
+  --font: "Forum", "Didot", "Bodoni 72", Georgia, serif;
+  --track: -0.052em;
+}
+html, body { height: 100%; }
+html { background: var(--backdrop); }
+body {
+  background: var(--backdrop) url("backdrop.jpg") center 30% / cover no-repeat;
+  color: var(--green);
+  font-family: var(--font);
+  letter-spacing: var(--track);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 16px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.card {
+  width: 100%; max-width: 400px;
+  background: var(--cream);
+  display: flex; flex-direction: column; align-items: center;
+  gap: clamp(18px, 3.5vh, 30px);
+  padding: clamp(22px, 4.5vh, 38px) 22px;
+  box-sizing: border-box;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .35);
+  outline: 1px solid var(--rule); outline-offset: -9px;
+}
+
+.logo { width: clamp(84px, 15vh, 118px); height: auto; display: block; }
+
+nav { width: 100%; display: flex; flex-direction: column; gap: 9px; }
+
+.link {
+  display: flex; align-items: center; justify-content: center; position: relative;
+  min-height: clamp(46px, 6.6vh, 54px); padding: 6px 30px; box-sizing: border-box;
+  border: 1px solid var(--green);
+  color: var(--green); text-decoration: none;
+  font-size: 19px; letter-spacing: var(--track); text-transform: uppercase;
+  transition: background-color .2s ease;
+}
+/* inner hairline: the double-ruled border of old stationery */
+.link::before { content: ""; position: absolute; inset: 3px; border: 1px solid var(--rule); pointer-events: none; }
+.link:hover, .link:focus-visible { background: var(--hover); }
+.link:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+
+.link.primary { background: var(--green); color: var(--cream); }
+.link.primary::before { border-color: rgba(255, 249, 236, .45); }
+.link.primary:hover, .link.primary:focus-visible { opacity: .92; }
+
+.group-label { margin: 6px 0 -2px; text-align: center; font-size: 16px; }
+.regs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.regs .link { padding: 6px 2px; font-size: 16px; }
+.website { margin-top: 12px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+<meta name="description" content="Young Veterinary Partnership: Pet Healthcare Club, appointments and registration for Chiswick, Hounslow and Ealing.">
+<link rel="icon" href="logo-green.png">
+</head>
+<body>
+<main class="card">
+  <img class="logo" src="logo-green.png" alt="Young Veterinary Partnership">
+
+  <nav aria-label="Links">
+    <a class="link primary" href="https://www.youngvets.co.uk/services/pet-healthcare-club/" target="_blank" rel="noopener">Pet Healthcare Club</a>
+    <a class="link" href="https://www.youngvets.co.uk/contact-us/appointments/" target="_blank" rel="noopener">Appointments</a>
+
+    <p class="group-label">REGISTRATION</p>
+    <div class="regs">
+      <a class="link" href="https://www.youngvets.co.uk/contact-us/registration-chiswick/" target="_blank" rel="noopener">Chiswick</a>
+      <a class="link" href="https://www.youngvets.co.uk/contact-us/registration-hounslow-surgery/" target="_blank" rel="noopener">Hounslow</a>
+      <a class="link" href="https://www.youngvets.co.uk/contact-us/registration-ealing-surgery/" target="_blank" rel="noopener">Ealing</a>
+    </div>
+
+    <a class="link website" href="https://www.youngvets.co.uk" target="_blank" rel="noopener">Visit our website</a>
+  </nav>
+</main>
+</body>
+</html>
